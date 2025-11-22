@@ -15,7 +15,7 @@ public class CityLibrary {
             try { return new Book(Integer.parseInt(p[0]), p[1], p[2], p[3], Boolean.parseBoolean(p[4])); }
             catch(Exception e){ return null; }
         }
-        @Override public int compareTo(Book o){ return title.compareToIgnoreCase(o.title); }
+        public int compareTo(Book o){ return title.compareToIgnoreCase(o.title); }
         void display(){ System.out.println("ID:"+id+" | "+title+" | "+author+" | "+category+" | Issued:"+isIssued); }
     }
 
@@ -202,3 +202,4 @@ public class CityLibrary {
         } catch(IOException e){ System.out.println("Error saving data."); }
     }
 }
+
