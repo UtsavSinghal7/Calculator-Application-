@@ -149,7 +149,6 @@ public class CityLibrary {
         }
         if(!found) System.out.println("No books found.");
     }
-
     void sortBooks(){
         System.out.println("Sort by: 1.Title  2.Author  3.Category");
         System.out.print("Choice: "); String c = sc.nextLine().trim();
@@ -159,10 +158,8 @@ public class CityLibrary {
         else Collections.sort(list);
         for(Book b : list) b.display();
     }
-
     void listBooks(){ if(books.isEmpty()){ System.out.println("No books."); return; } for(Book b: books.values()) b.display(); System.out.println("Categories: "+categories); }
     void listMembers(){ if(members.isEmpty()){ System.out.println("No members."); return; } for(Member m: members.values()) m.display(); }
-
     void loadAll(){ loadBooks(); loadMembers(); if(!books.isEmpty()) nextBookId = Collections.max(books.keySet()) + 1; if(!members.isEmpty()) nextMemberId = Collections.max(members.keySet()) + 1; }
     void loadBooks(){
         File f = new File(BOOKS_FILE);
@@ -190,7 +187,6 @@ public class CityLibrary {
             br.close();
         } catch(IOException e){ System.out.println("Error loading members."); }
     }
-
     void saveAll(){
         try{
             BufferedWriter bw = new BufferedWriter(new FileWriter(BOOKS_FILE,false));
@@ -202,4 +198,5 @@ public class CityLibrary {
         } catch(IOException e){ System.out.println("Error saving data."); }
     }
 }
+
 
